@@ -20,9 +20,7 @@ def trimline(line, maxlen=124):
     splitpt = line.rindex(' ', 0, maxlen)
     before = line[:splitpt] + '\n'
     after = line[splitpt+1:]
-    tmp = [before]
-    tmp.extend(trimline(after, maxlen))
-    return tmp
+    return [before, *trimline(after, maxlen)]
 
 def main():
     import sys
