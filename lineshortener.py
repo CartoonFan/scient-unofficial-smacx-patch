@@ -22,6 +22,7 @@ def trimline(line, maxlen=124):
     after = line[splitpt+1:]
     return [before, *trimline(after, maxlen)]
 
+
 def main():
     import sys
     filename = sys.argv[1]
@@ -35,5 +36,6 @@ def main():
 
     with open(filename, "w", encoding="latin1", newline="\r\n") as f:
         f.writelines(newlines)
+
 
 main()
