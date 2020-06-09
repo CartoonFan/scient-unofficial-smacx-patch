@@ -17,14 +17,15 @@ def trimline(line, maxlen=124):
         return [line]
 
     # Find the first space before maxlen and replace with \r\n
-    splitpt = line.rindex(' ', 0, maxlen)
-    before = line[:splitpt] + '\n'
-    after = line[splitpt+1:]
+    splitpt = line.rindex(" ", 0, maxlen)
+    before = line[:splitpt] + "\n"
+    after = line[splitpt + 1 :]
     return [before, *trimline(after, maxlen)]
 
 
 def main():
     import sys
+
     filename = sys.argv[1]
 
     with open(filename, encoding="latin1") as f:
