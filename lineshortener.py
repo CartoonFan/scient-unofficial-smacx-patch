@@ -19,7 +19,7 @@ def trimline(line, maxlen=124):
     # Find the first space before maxlen and replace with \r\n
     splitpt = line.rindex(" ", 0, maxlen)
     before = line[:splitpt] + "\n"
-    after = line[splitpt + 1 :]
+    after = line[splitpt + 1:]
     return [before, *trimline(after, maxlen)]
 
 
